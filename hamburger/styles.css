@@ -1,0 +1,149 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+.burg-container {
+  padding: 20px 10px 10px;
+}
+
+.burger__top-bun {
+  min-height: 70px;
+  background-color: sandybrown;
+  border-radius: 70px 70px 0 0;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin: 0 20px;
+}
+
+.burger__top-bun--seed {
+  background-color: rgb(235, 203, 164);
+  border-radius: 15px;
+  height: 15px;
+  min-width: 30px;
+  margin: -8px 40px 0px;
+}
+
+.burger__cheese {
+  min-height: 15px;
+  background-color: yellow;
+  margin: 0 10px;
+}
+
+.burger__tomatoes {
+  margin: 0 20px;
+  display: flex;
+  min-height: 20px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.burger__tomatoes--tom-sect-a,
+.burger__tomatoes--tom-sect-c,
+.burger__tomatoes--tom-sect-e {
+  min-height: 20px;
+  background-color: red;
+}
+
+.burger__tomatoes--tom-sect-b {
+  min-height: 20px;
+  background-color: rgb(216, 152, 163);
+}
+
+.burger__tomatoes--tom-sect-d {
+  min-height: 20px;
+  background-color: pink;
+}
+
+.burger__tomatoes--tom-sect-a {
+  min-width: 10%;
+}
+.burger__tomatoes--tom-sect-b {
+  min-width: 2%;
+}
+.burger__tomatoes--tom-sect-c {
+  min-width: 5%;
+}
+.burger__tomatoes--tom-sect-d {
+  min-width: 4%;
+}
+.burger__tomatoes--tom-sect-e {
+  min-width: 79%;
+}
+
+.burger__lettuces {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.burger__lettuces--let-sect-a,
+.burger__lettuces--let-sect-b,
+.burger__lettuces--let-sect-c {
+  min-height: 30px;
+  background-color: green;
+  min-width: 16.6%;
+}
+
+.burger__lettuces--let-sect-a {
+  border-radius: 15px 0 15px 15px;
+}
+.burger__lettuces--let-sect-b {
+  border-radius: 0px 0px 15px 15px;
+}
+.burger__lettuces--let-sect-c {
+  border-radius: 0 15px 15px 15px;
+}
+
+.burger__patty {
+  min-height: 60px;
+  background-color: brown;
+  margin: -20px 10px 0;
+  border-radius: 40px;
+}
+
+.burger__bottom-bun {
+  margin: 0 20px;
+}
+
+.burger__bottom-bun--bun-sect-a,
+.burger__bottom-bun--bun-sect-b {
+  min-height: 40px;
+  border-radius: 0 0 40px 10px;
+}
+
+.burger__bottom-bun--bun-sect-a {
+  background-color: rgb(189, 126, 71);
+}
+
+.burger__bottom-bun--bun-sect-b {
+  background-color: sandybrown;
+  margin-right: 20%;
+  margin-top: -40px;
+}
+
+@media screen and (min-width: 376px) {
+  .burg-container {
+    max-width: 375px;
+  }
+  .burger__top-bun--seed {
+    margin: -8px 55px 0px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .burg-container {
+    padding: 20px 0 10px 0;
+    width: 280px;
+  }
+  .burger__top-bun--seed {
+    margin: -8px 30px 0px;
+  }
+}
