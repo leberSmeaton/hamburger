@@ -1,0 +1,244 @@
+$burgerbun: sandybrown;
+$burgerbunshadow: rgb(189, 126, 71);
+$meat: brown;
+$lettuce: green;
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+.burger {
+  padding: 50px 10px 10px;
+  height: 375px;
+
+  &__top-bun {
+    min-height: 70px;
+    background-color: $burgerbun;
+    border-radius: 70px 70px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 20px;
+
+    animation: topbunAni;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+
+    &:hover {
+      @keyframes topbunAni {
+        from {
+          margin-bottom: 0;
+        }
+        to {
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+    &--seed {
+      background-color: rgb(235, 203, 164);
+      border-radius: 15px;
+      height: 15px;
+      min-width: 30px;
+      margin: -8px 55px 0px;
+
+      animation: seedAni;
+      animation-duration: 3s;
+      animation-delay: 5s;
+      animation-iteration-count: infinite;
+
+      &:hover {
+        @keyframes seedAni {
+          from {
+            margin-top: 0;
+          }
+          to {
+            margin-top: -20px;
+          }
+        }
+      }
+    }
+  }
+
+  &__cheese {
+    min-height: 15px;
+    background-color: yellow;
+    margin: 0 10px;
+
+    animation: cheeseAni;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+
+    &:hover {
+      @keyframes cheeseAni {
+        from {
+          margin-bottom: 0;
+        }
+        to {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  &__tomatoes {
+    margin: 0 20px;
+    display: flex;
+    min-height: 20px;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &--tom-sect-a,
+    &--tom-sect-b,
+    &--tom-sect-c,
+    &--tom-sect-d,
+    &--tom-sect-e {
+      min-height: 20px;
+    }
+
+    &--tom-sect-a,
+    &--tom-sect-c,
+    &--tom-sect-e {
+      background-color: red;
+    }
+
+    &--tom-sect-b {
+      min-width: 2%;
+      background-color: rgb(216, 152, 163);
+    }
+
+    &--tom-sect-d {
+      min-width: 4%;
+      background-color: pink;
+    }
+
+    &--tom-sect-a {
+      min-width: 10%;
+    }
+
+    &--tom-sect-c {
+      min-width: 5%;
+    }
+
+    &--tom-sect-e {
+      min-width: 79%;
+    }
+
+    animation: tomatoAni;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+
+    &:hover {
+      @keyframes tomatoAni {
+        from {
+          margin-bottom: 0;
+        }
+        to {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__lettuces {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+
+    &--let-sect-a,
+    &--let-sect-b,
+    &--let-sect-c {
+      min-height: 30px;
+      background-color: $lettuce;
+      min-width: 16.6%;
+    }
+    &--let-sect-a {
+      border-radius: 15px 0 15px 15px;
+    }
+    &--let-sect-b {
+      border-radius: 0px 0px 15px 15px;
+    }
+    &--let-sect-c {
+      border-radius: 0 15px 15px 15px;
+    }
+
+    animation: lettuceAni;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+
+    &:hover {
+      @keyframes lettuceAni {
+        from {
+          margin-bottom: 0;
+        }
+        to {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__patty {
+    min-height: 60px;
+    background-color: $meat;
+    margin: -20px 10px 0;
+    border-radius: 40px;
+
+    animation: pattyAni;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+
+    &:hover {
+      @keyframes pattyAni {
+        from {
+          margin-bottom: 0;
+        }
+        to {
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+
+  &__bottom-bun {
+    margin: 0 20px;
+
+    &--bun-sect-a,
+    &--bun-sect-b {
+      min-height: 40px;
+      border-radius: 0 0 40px 10px;
+    }
+
+    &--bun-sect-a {
+      background-color: $burgerbunshadow;
+    }
+
+    &--bun-sect-b {
+      background-color: $burgerbun;
+      margin-right: 20%;
+      margin-top: -40px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .burg-container {
+    padding: 20px 0 10px 0;
+    width: 280px;
+  }
+  .burger__top-bun--seed {
+    margin: -8px 40px 0px;
+  }
+}

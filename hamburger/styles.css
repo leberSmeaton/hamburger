@@ -9,10 +9,10 @@ body {
   background-color: aliceblue;
 }
 
-.burg-container {
-  padding: 20px 10px 10px;
+.burger {
+  padding: 50px 10px 10px;
+  height: 375px;
 }
-
 .burger__top-bun {
   min-height: 70px;
   background-color: sandybrown;
@@ -21,77 +21,111 @@ body {
   justify-content: center;
   flex-flow: row wrap;
   margin: 0 20px;
+  animation: topbunAni;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
 }
-
+@keyframes topbunAni {
+  from {
+    margin-bottom: 0;
+  }
+  to {
+    margin-bottom: 50px;
+  }
+}
 .burger__top-bun--seed {
-  background-color: rgb(235, 203, 164);
+  background-color: #ebcba4;
   border-radius: 15px;
   height: 15px;
   min-width: 30px;
-  margin: -8px 40px 0px;
+  margin: -8px 55px 0px;
+  animation: seedAni;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
 }
-
+@keyframes seedAni {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -20px;
+  }
+}
 .burger__cheese {
   min-height: 15px;
   background-color: yellow;
   margin: 0 10px;
+  animation: cheeseAni;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
 }
-
+@keyframes cheeseAni {
+  from {
+    margin-bottom: 0;
+  }
+  to {
+    margin-bottom: 30px;
+  }
+}
 .burger__tomatoes {
   margin: 0 20px;
   display: flex;
   min-height: 20px;
   flex-direction: row;
   justify-content: space-around;
+  animation: tomatoAni;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
 }
-
-.burger__tomatoes--tom-sect-a,
-.burger__tomatoes--tom-sect-c,
-.burger__tomatoes--tom-sect-e {
+.burger__tomatoes--tom-sect-a, .burger__tomatoes--tom-sect-b, .burger__tomatoes--tom-sect-c, .burger__tomatoes--tom-sect-d, .burger__tomatoes--tom-sect-e {
   min-height: 20px;
+}
+.burger__tomatoes--tom-sect-a, .burger__tomatoes--tom-sect-c, .burger__tomatoes--tom-sect-e {
   background-color: red;
-}
-
-.burger__tomatoes--tom-sect-b {
-  min-height: 20px;
-  background-color: rgb(216, 152, 163);
-}
-
-.burger__tomatoes--tom-sect-d {
-  min-height: 20px;
-  background-color: pink;
-}
-
-.burger__tomatoes--tom-sect-a {
-  min-width: 10%;
 }
 .burger__tomatoes--tom-sect-b {
   min-width: 2%;
+  background-color: #d898a3;
+}
+.burger__tomatoes--tom-sect-d {
+  min-width: 4%;
+  background-color: pink;
+}
+.burger__tomatoes--tom-sect-a {
+  min-width: 10%;
 }
 .burger__tomatoes--tom-sect-c {
   min-width: 5%;
 }
-.burger__tomatoes--tom-sect-d {
-  min-width: 4%;
-}
 .burger__tomatoes--tom-sect-e {
   min-width: 79%;
 }
-
+@keyframes tomatoAni {
+  from {
+    margin-bottom: 0;
+  }
+  to {
+    margin-bottom: 20px;
+  }
+}
 .burger__lettuces {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  animation: lettuceAni;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
 }
-
-.burger__lettuces--let-sect-a,
-.burger__lettuces--let-sect-b,
-.burger__lettuces--let-sect-c {
+.burger__lettuces--let-sect-a, .burger__lettuces--let-sect-b, .burger__lettuces--let-sect-c {
   min-height: 30px;
   background-color: green;
   min-width: 16.6%;
 }
-
 .burger__lettuces--let-sect-a {
   border-radius: 15px 0 15px 15px;
 }
@@ -101,41 +135,46 @@ body {
 .burger__lettuces--let-sect-c {
   border-radius: 0 15px 15px 15px;
 }
-
+@keyframes lettuceAni {
+  from {
+    margin-bottom: 0;
+  }
+  to {
+    margin-bottom: 40px;
+  }
+}
 .burger__patty {
   min-height: 60px;
   background-color: brown;
   margin: -20px 10px 0;
   border-radius: 40px;
+  animation: pattyAni;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
 }
-
+@keyframes pattyAni {
+  from {
+    margin-bottom: 0;
+  }
+  to {
+    margin-bottom: 50px;
+  }
+}
 .burger__bottom-bun {
   margin: 0 20px;
 }
-
-.burger__bottom-bun--bun-sect-a,
-.burger__bottom-bun--bun-sect-b {
+.burger__bottom-bun--bun-sect-a, .burger__bottom-bun--bun-sect-b {
   min-height: 40px;
   border-radius: 0 0 40px 10px;
 }
-
 .burger__bottom-bun--bun-sect-a {
-  background-color: rgb(189, 126, 71);
+  background-color: #bd7e47;
 }
-
 .burger__bottom-bun--bun-sect-b {
   background-color: sandybrown;
   margin-right: 20%;
   margin-top: -40px;
-}
-
-@media screen and (min-width: 376px) {
-  .burg-container {
-    max-width: 375px;
-  }
-  .burger__top-bun--seed {
-    margin: -8px 55px 0px;
-  }
 }
 
 @media screen and (max-width: 375px) {
@@ -143,7 +182,10 @@ body {
     padding: 20px 0 10px 0;
     width: 280px;
   }
+
   .burger__top-bun--seed {
-    margin: -8px 30px 0px;
+    margin: -8px 40px 0px;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */
