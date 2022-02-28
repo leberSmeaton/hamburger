@@ -17,6 +17,7 @@ body {
 .burger {
   padding: 50px 10px 10px;
   height: 375px;
+  width: 280px;
 
   &__top-bun {
     min-height: 70px;
@@ -27,44 +28,12 @@ body {
     flex-flow: row wrap;
     margin: 0 20px;
 
-    animation: topbunAni;
-    animation-duration: 3s;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
-
-    &:hover {
-      @keyframes topbunAni {
-        from {
-          margin-bottom: 0;
-        }
-        to {
-          margin-bottom: 50px;
-        }
-      }
-    }
-
     &--seed {
       background-color: rgb(235, 203, 164);
       border-radius: 15px;
       height: 15px;
       min-width: 30px;
       margin: -8px 55px 0px;
-
-      animation: seedAni;
-      animation-duration: 3s;
-      animation-delay: 5s;
-      animation-iteration-count: infinite;
-
-      &:hover {
-        @keyframes seedAni {
-          from {
-            margin-top: 0;
-          }
-          to {
-            margin-top: -20px;
-          }
-        }
-      }
     }
   }
 
@@ -72,22 +41,6 @@ body {
     min-height: 15px;
     background-color: yellow;
     margin: 0 10px;
-
-    animation: cheeseAni;
-    animation-duration: 3s;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
-
-    &:hover {
-      @keyframes cheeseAni {
-        from {
-          margin-bottom: 0;
-        }
-        to {
-          margin-bottom: 30px;
-        }
-      }
-    }
   }
 
   &__tomatoes {
@@ -132,22 +85,6 @@ body {
     &--tom-sect-e {
       min-width: 79%;
     }
-
-    animation: tomatoAni;
-    animation-duration: 3s;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
-
-    &:hover {
-      @keyframes tomatoAni {
-        from {
-          margin-bottom: 0;
-        }
-        to {
-          margin-bottom: 20px;
-        }
-      }
-    }
   }
 
   &__lettuces {
@@ -171,22 +108,6 @@ body {
     &--let-sect-c {
       border-radius: 0 15px 15px 15px;
     }
-
-    animation: lettuceAni;
-    animation-duration: 3s;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
-
-    &:hover {
-      @keyframes lettuceAni {
-        from {
-          margin-bottom: 0;
-        }
-        to {
-          margin-bottom: 40px;
-        }
-      }
-    }
   }
 
   &__patty {
@@ -194,22 +115,6 @@ body {
     background-color: $meat;
     margin: -20px 10px 0;
     border-radius: 40px;
-
-    animation: pattyAni;
-    animation-duration: 3s;
-    animation-delay: 5s;
-    animation-iteration-count: infinite;
-
-    &:hover {
-      @keyframes pattyAni {
-        from {
-          margin-bottom: 0;
-        }
-        to {
-          margin-bottom: 50px;
-        }
-      }
-    }
   }
 
   &__bottom-bun {
@@ -231,14 +136,54 @@ body {
       margin-top: -40px;
     }
   }
+
+  &:hover {
+    cursor: pointer;
+
+    .burger__top-bun,
+    .burger__cheese,
+    .burger__lettuces,
+    .burger__tomatoes {
+      animation: anime 2s cubic-bezier(0, 1.5, 1, 1.5) infinite;
+    }
+    .burger__patty {
+      animation: animePatty 2s cubic-bezier(0, 1.5, 1, 1.5) infinite;
+    }
+  }
+
+  @keyframes anime {
+    0% {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    60% {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    100% {
+      margin-top: 13px;
+      margin-bottom: 0px;
+    }
+  }
+
+  @keyframes animePatty {
+    0% {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    60% {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    100% {
+      margin-top: -10px;
+      margin-bottom: 0px;
+    }
+  }
 }
 
-@media screen and (max-width: 375px) {
-  .burg-container {
-    padding: 20px 0 10px 0;
-    width: 280px;
-  }
+@media screen and (min-width: 375px) {
   .burger__top-bun--seed {
-    margin: -8px 40px 0px;
+    margin: -8px 45px 0px;
   }
 }

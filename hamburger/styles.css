@@ -12,6 +12,7 @@ body {
 .burger {
   padding: 50px 10px 10px;
   height: 375px;
+  width: 280px;
 }
 .burger__top-bun {
   min-height: 70px;
@@ -21,18 +22,6 @@ body {
   justify-content: center;
   flex-flow: row wrap;
   margin: 0 20px;
-  animation: topbunAni;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-}
-@keyframes topbunAni {
-  from {
-    margin-bottom: 0;
-  }
-  to {
-    margin-bottom: 50px;
-  }
 }
 .burger__top-bun--seed {
   background-color: #ebcba4;
@@ -40,35 +29,11 @@ body {
   height: 15px;
   min-width: 30px;
   margin: -8px 55px 0px;
-  animation: seedAni;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-}
-@keyframes seedAni {
-  from {
-    margin-top: 0;
-  }
-  to {
-    margin-top: -20px;
-  }
 }
 .burger__cheese {
   min-height: 15px;
   background-color: yellow;
   margin: 0 10px;
-  animation: cheeseAni;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-}
-@keyframes cheeseAni {
-  from {
-    margin-bottom: 0;
-  }
-  to {
-    margin-bottom: 30px;
-  }
 }
 .burger__tomatoes {
   margin: 0 20px;
@@ -76,10 +41,6 @@ body {
   min-height: 20px;
   flex-direction: row;
   justify-content: space-around;
-  animation: tomatoAni;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
 }
 .burger__tomatoes--tom-sect-a, .burger__tomatoes--tom-sect-b, .burger__tomatoes--tom-sect-c, .burger__tomatoes--tom-sect-d, .burger__tomatoes--tom-sect-e {
   min-height: 20px;
@@ -104,22 +65,10 @@ body {
 .burger__tomatoes--tom-sect-e {
   min-width: 79%;
 }
-@keyframes tomatoAni {
-  from {
-    margin-bottom: 0;
-  }
-  to {
-    margin-bottom: 20px;
-  }
-}
 .burger__lettuces {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  animation: lettuceAni;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
 }
 .burger__lettuces--let-sect-a, .burger__lettuces--let-sect-b, .burger__lettuces--let-sect-c {
   min-height: 30px;
@@ -135,31 +84,11 @@ body {
 .burger__lettuces--let-sect-c {
   border-radius: 0 15px 15px 15px;
 }
-@keyframes lettuceAni {
-  from {
-    margin-bottom: 0;
-  }
-  to {
-    margin-bottom: 40px;
-  }
-}
 .burger__patty {
   min-height: 60px;
   background-color: brown;
   margin: -20px 10px 0;
   border-radius: 40px;
-  animation: pattyAni;
-  animation-duration: 3s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-}
-@keyframes pattyAni {
-  from {
-    margin-bottom: 0;
-  }
-  to {
-    margin-bottom: 50px;
-  }
 }
 .burger__bottom-bun {
   margin: 0 20px;
@@ -176,15 +105,50 @@ body {
   margin-right: 20%;
   margin-top: -40px;
 }
-
-@media screen and (max-width: 375px) {
-  .burg-container {
-    padding: 20px 0 10px 0;
-    width: 280px;
+.burger:hover {
+  cursor: pointer;
+}
+.burger:hover .burger__top-bun,
+.burger:hover .burger__cheese,
+.burger:hover .burger__lettuces,
+.burger:hover .burger__tomatoes {
+  animation: anime 2s cubic-bezier(0, 1.5, 1, 1.5) infinite;
+}
+.burger:hover .burger__patty {
+  animation: animePatty 2s cubic-bezier(0, 1.5, 1, 1.5) infinite;
+}
+@keyframes anime {
+  0% {
+    margin-bottom: 0;
+    margin-top: 0;
   }
+  60% {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  100% {
+    margin-top: 13px;
+    margin-bottom: 0px;
+  }
+}
+@keyframes animePatty {
+  0% {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  60% {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  100% {
+    margin-top: -10px;
+    margin-bottom: 0px;
+  }
+}
 
+@media screen and (min-width: 375px) {
   .burger__top-bun--seed {
-    margin: -8px 40px 0px;
+    margin: -8px 45px 0px;
   }
 }
 
