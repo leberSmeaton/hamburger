@@ -5,13 +5,13 @@ $lettuce: green;
 
 html {
   box-sizing: border-box;
+  background-color: aliceblue;
 }
 
-body {
+main {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: aliceblue;
 }
 
 .burger {
@@ -28,12 +28,12 @@ body {
     flex-flow: row wrap;
     margin: 0 20px;
 
-    &--seed {
+    & span {
       background-color: rgb(235, 203, 164);
       border-radius: 15px;
       height: 15px;
       min-width: 30px;
-      margin: -8px 55px 0px;
+      margin: -8px 40px 0px;
     }
   }
 
@@ -49,41 +49,26 @@ body {
     min-height: 20px;
     flex-direction: row;
     justify-content: space-around;
+    position: relative;
+    background-color: rgb(255, 0, 0);
 
-    &--tom-sect-a,
-    &--tom-sect-b,
-    &--tom-sect-c,
-    &--tom-sect-d,
-    &--tom-sect-e {
+    &::after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      min-width: 5px;
       min-height: 20px;
+      margin-left: -40%;
+      background-color: rgb(255, 255, 255, 0.7);
     }
-
-    &--tom-sect-a,
-    &--tom-sect-c,
-    &--tom-sect-e {
-      background-color: red;
-    }
-
-    &--tom-sect-b {
-      min-width: 2%;
-      background-color: rgb(216, 152, 163);
-    }
-
-    &--tom-sect-d {
-      min-width: 4%;
-      background-color: pink;
-    }
-
-    &--tom-sect-a {
-      min-width: 10%;
-    }
-
-    &--tom-sect-c {
-      min-width: 5%;
-    }
-
-    &--tom-sect-e {
-      min-width: 79%;
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      min-width: 10px;
+      min-height: 20px;
+      margin-left: -60%;
+      background-color: rgb(255, 255, 255, 0.5);
     }
   }
 
@@ -92,21 +77,17 @@ body {
     justify-content: center;
     flex-flow: row wrap;
 
-    &--let-sect-a,
-    &--let-sect-b,
-    &--let-sect-c {
+    & span {
       min-height: 30px;
       background-color: $lettuce;
       min-width: 16.6%;
-    }
-    &--let-sect-a {
-      border-radius: 15px 0 15px 15px;
-    }
-    &--let-sect-b {
       border-radius: 0px 0px 15px 15px;
-    }
-    &--let-sect-c {
-      border-radius: 0 15px 15px 15px;
+      &:first-child {
+        border-radius: 15px 0 15px 15px;
+      }
+      &:last-child {
+        border-radius: 0 15px 15px 15px;
+      }
     }
   }
 
@@ -119,21 +100,27 @@ body {
 
   &__bottom-bun {
     margin: 0 20px;
+    position: relative;
 
-    &--bun-sect-a,
-    &--bun-sect-b {
+    &::after {
+      content: "";
+      z-index: 2;
+      position: absolute;
       min-height: 40px;
       border-radius: 0 0 40px 10px;
-    }
-
-    &--bun-sect-a {
-      background-color: $burgerbunshadow;
-    }
-
-    &--bun-sect-b {
       background-color: $burgerbun;
       margin-right: 20%;
-      margin-top: -40px;
+      min-width: 80%;
+    }
+
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      min-height: 40px;
+      border-radius: 0 0 40px 10px;
+      background-color: $burgerbunshadow;
+      min-width: 100%;
     }
   }
 

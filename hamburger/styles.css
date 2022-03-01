@@ -1,12 +1,12 @@
 html {
   box-sizing: border-box;
+  background-color: aliceblue;
 }
 
-body {
+main {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-color: aliceblue;
 }
 
 .burger {
@@ -23,12 +23,12 @@ body {
   flex-flow: row wrap;
   margin: 0 20px;
 }
-.burger__top-bun--seed {
+.burger__top-bun span {
   background-color: #ebcba4;
   border-radius: 15px;
   height: 15px;
   min-width: 30px;
-  margin: -8px 55px 0px;
+  margin: -8px 40px 0px;
 }
 .burger__cheese {
   min-height: 15px;
@@ -41,47 +41,42 @@ body {
   min-height: 20px;
   flex-direction: row;
   justify-content: space-around;
-}
-.burger__tomatoes--tom-sect-a, .burger__tomatoes--tom-sect-b, .burger__tomatoes--tom-sect-c, .burger__tomatoes--tom-sect-d, .burger__tomatoes--tom-sect-e {
-  min-height: 20px;
-}
-.burger__tomatoes--tom-sect-a, .burger__tomatoes--tom-sect-c, .burger__tomatoes--tom-sect-e {
+  position: relative;
   background-color: red;
 }
-.burger__tomatoes--tom-sect-b {
-  min-width: 2%;
-  background-color: #d898a3;
+.burger__tomatoes::after {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  min-width: 5px;
+  min-height: 20px;
+  margin-left: -40%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
-.burger__tomatoes--tom-sect-d {
-  min-width: 4%;
-  background-color: pink;
-}
-.burger__tomatoes--tom-sect-a {
-  min-width: 10%;
-}
-.burger__tomatoes--tom-sect-c {
-  min-width: 5%;
-}
-.burger__tomatoes--tom-sect-e {
-  min-width: 79%;
+.burger__tomatoes::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  min-width: 10px;
+  min-height: 20px;
+  margin-left: -60%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .burger__lettuces {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
 }
-.burger__lettuces--let-sect-a, .burger__lettuces--let-sect-b, .burger__lettuces--let-sect-c {
+.burger__lettuces span {
   min-height: 30px;
   background-color: green;
   min-width: 16.6%;
-}
-.burger__lettuces--let-sect-a {
-  border-radius: 15px 0 15px 15px;
-}
-.burger__lettuces--let-sect-b {
   border-radius: 0px 0px 15px 15px;
 }
-.burger__lettuces--let-sect-c {
+.burger__lettuces span:first-child {
+  border-radius: 15px 0 15px 15px;
+}
+.burger__lettuces span:last-child {
   border-radius: 0 15px 15px 15px;
 }
 .burger__patty {
@@ -92,18 +87,26 @@ body {
 }
 .burger__bottom-bun {
   margin: 0 20px;
+  position: relative;
 }
-.burger__bottom-bun--bun-sect-a, .burger__bottom-bun--bun-sect-b {
+.burger__bottom-bun::after {
+  content: "";
+  z-index: 2;
+  position: absolute;
   min-height: 40px;
   border-radius: 0 0 40px 10px;
-}
-.burger__bottom-bun--bun-sect-a {
-  background-color: #bd7e47;
-}
-.burger__bottom-bun--bun-sect-b {
   background-color: sandybrown;
   margin-right: 20%;
-  margin-top: -40px;
+  min-width: 80%;
+}
+.burger__bottom-bun::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  min-height: 40px;
+  border-radius: 0 0 40px 10px;
+  background-color: #bd7e47;
+  min-width: 100%;
 }
 .burger:hover {
   cursor: pointer;
